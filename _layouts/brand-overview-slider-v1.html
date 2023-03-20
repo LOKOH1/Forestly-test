@@ -1,0 +1,42 @@
+---
+layout: default
+---
+ 
+    {% if page.brands %} 
+    <section>
+      <div class="container max-width-adaptive-sm carousel carousel-v2 carousel-brands flex flex-column js-carousel margin-y-md bg-lighter padding-sm" data-drag="on" data-autoplay="off" data-navigation="off" data-navigation-class="carousel-v2__navigation" data-navigation-item-class="carousel-v2__navigation-item">
+        <div class="carousel__wrapper order-2 overflow-hidden">
+  
+        <ol class="carousel__list items-center">
+    {% for item in page.brands %}{% if item.render %}
+    {% include brand-slide.html %}{% endif %}
+    {% endfor %}  
+
+    </ol>
+  </div>
+
+    <nav class="margin-bottom-xs order-1 no-js:is-hidden">
+      <h2 class="text-md float-left display@md padding-top-xs">{{ content }}</h2>
+      <ul class="flex gap-xxxs justify-end">
+        <li>
+          <button class="reset carousel__control carousel__control--prev js-carousel__control js-tab-focus">
+            <svg class="icon" viewBox="0 0 20 20">
+              <title>zurück</title>
+              <polyline points="13 18 5 10 13 2" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" />
+            </svg>
+          </button>
+        </li>
+
+        <li>
+          <button class="reset carousel__control carousel__control--next js-carousel__control js-tab-focus">
+            <svg class="icon" viewBox="0 0 20 20">
+              <title>vor</title>
+              <polyline points="7 18 15 10 7 2" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+    {% endif %}

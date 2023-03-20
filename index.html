@@ -1,0 +1,31 @@
+---
+title: Startseite
+layout: default-incl-html-tag
+---
+
+<div class="container max-width-xxxs">
+  <h1 class="margin-y-lg">Übersicht aller Seiten</h1>
+
+  <a href="/admin/" target="_blank" rel="noopener noreferrer"
+    ><h4 class="margin-bottom-sm">Zum Admin Bereich</h4></a
+  >
+
+  <ul class="list-v3 margin-bottom-xl">
+    {% for cat in site.category-list %}
+    <li class="list-v3__item flex gap-sm items-center@sm">
+      <div class="text-component text-space-y-sm">
+        <h3 class="text-base">
+          <a class="color-contrast-higher list-v3__link">{{ cat }}</a>
+        </h3>
+
+        <ul>
+          {% for page in site.pages %} {% if page.resource == true %} {% for pc
+            in page.categories %} {% if pc == cat %}
+            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+          {% endif %} {% endfor %} {% endif %} {% endfor %}
+        </ul>
+        {% endfor %}
+      </div>
+    </li>
+  </ul>
+</div>

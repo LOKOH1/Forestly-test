@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+    <section class="">
+      <div class="text-md margin-bottom-sm">{{ content }}</div>
+
+      {% if page.slide %}
+      <div class="margin-top-md">
+        <div
+          class="slideshow-pm loop-slideshow-v2 js-loop-slideshow-v2"
+          data-swipe="on"
+          data-pm-nav="off"
+        >
+          <div class="slideshow-pm__content">
+            <ul class="slideshow-pm__list js-slideshow-pm__list">
+              {% for item in page.slide %} {% if item.render %} {% include slide.html %} {% endif %} {% endfor %}
+            </ul>
+
+            <ul>
+              <li class="slideshow-pm__control-wrapper js-slideshow-pm__control-wrapper">
+                <button class="reset loop-slideshow-v2__control js-tab-focus">
+                  <svg class="icon" viewBox="0 0 48 48">
+                    <title>zurück</title>
+                    <g>
+                      <path fill="var(--color-contrast-higher)" opacity=".9" d="M24 4a20 20 0 1 1 0 40 20 20 0 1 1 0-40z"></path>
+                      <path d="M26 18l-6 6 6 6" fill="none" stroke="var(--color-bg)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </g>
+                  </svg>
+                </button>
+              </li>
+      
+              <li class="slideshow-pm__control-wrapper js-slideshow-pm__control-wrapper">
+                <button class="reset loop-slideshow-v2__control js-tab-focus">
+                  <svg class="icon" viewBox="0 0 48 48">
+                    <title>weiter</title>
+                    <g>
+                      <circle cx="24" cy="24" r="20" fill="var(--color-contrast-higher)" opacity=".9"></circle>
+                      <circle class="loop-slideshow-v2__loader js-loop-slideshow-v2__loader" cx="24" cy="24" r="23" fill="none" stroke="var(--color-contrast-higher)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dashoffset="144.44" stroke-dasharray="144.44"></circle>
+                      <path d="M22 18l6 6-6 6" fill="none" stroke="var(--color-bg)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </g>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+      
+    </section>

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<section class="margin-top-sm">
+  <div class="text-md margin-bottom-sm">{{ content }}</div>
+
+  {% if page.cards %}
+  <hr />
+  <div class="grid gap-sm">
+    {% for item in page.cards %} {% if item.render %} {% include card.html %} {% endif %} {% endfor %}
+  </div>
+
+  {% elsif page.magazin-cards %}
+
+  <hr />
+  <div class="grid gap-sm">
+    {% for item in page.magazin-cards %} {% if item.render %} {% include card.html %} {% endif %} {% endfor %}
+  </div>
+  {% endif %}
+</section>

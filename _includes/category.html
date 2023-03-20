@@ -1,0 +1,21 @@
+<a class="card col-6 col-3@sm col-2@md col-2@lg" href="{{ item.link }}" title="{{ item.title }}">
+  <figure class="card__img">
+    {% if page.loading == "lazy" %}
+    <img
+      class="block width-100%"
+      loading="lazy"
+      src="https://media.tiierisch.de/img/placeholder-small.png"
+      data-src="https://media.tiierisch.de/teaser/{{ item.img }}.jpg"
+      alt="{{ item.title }}"
+    />{% else %}
+    <img
+      class="block width-100%"
+      src="https://media.tiierisch.de/teaser/{{ item.img }}.jpg"
+      alt="{{ item.title }}"
+    />
+    {% endif %}
+  </figure>
+  <div class="card__content">
+    <h4 class="text-sm "> {{ item.title }}</h4>
+  </div>
+</a>

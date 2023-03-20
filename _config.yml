@@ -1,0 +1,27 @@
+jekyll_admin:
+  hidden_links:
+     - posts
+    # - pages
+     - staticfiles
+     - datafiles
+    # - configuration
+  homepage: "posts"
+
+show_drafts: false
+
+
+include: ['-tiierisch', '-skandeko', '-skanmoebler', '-seidenblumen']
+category-list: [Startseite, Beliebte Marken, Empfehlungen, Hilfe, Marken Seite,  News, Signaturen, Entwürfe]
+
+collections:
+  authors:
+    output: false
+  categories-faq:
+    output: false
+
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag

@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+    {{ content }} {% if page.brands %}
+    <section class="margin-y-lg bg-lighter padding-md">
+      <div class="grid flex flex-wrap gap-sm flex-center">
+        {% for item in page.brands %} {% if item.render %} {% include brand.html %} {% endif %} {% endfor %}
+      </div>
+    </section>
+
+    {% endif %}

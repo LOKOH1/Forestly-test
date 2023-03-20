@@ -1,0 +1,197 @@
+<a
+  class="card card-v14 flex flex-column col-6 col-3@md col-3@lg"
+  style="background-color: #{{ item.background-color }};"
+  href="{{ item.link }}"
+>
+  {% if page.loading == "lazy" %}
+
+  <!--  If card -->
+
+  {% if page.cards %}
+  <figure class="aspect-ratio-1:1">
+    <img
+      loading="lazy"
+      src="https://media.tiierisch.de/img/placeholder-large.png"
+      data-src="https://media.tiierisch.de/teaser/{{ item.img }}.jpg"
+      alt="{{ item.title }}"
+    />
+  </figure>
+
+  {% if item.subtitle %}
+
+  <h3 class="text-md padding-xs" style="color:#{{ item.text-color }};">
+    {{ item.title }}
+  </h3>
+  <p
+    class="text-right text-sm padding-xs padding-top-0 margin-top-auto"
+    style="color:#{{ item.text-color }};"
+  >
+    {{ item.subtitle }} →
+  </p>
+
+  {% else %}
+
+  <h3 class="text-md padding-xs" style="color:#{{ item.text-color }};">
+    {{ item.title }} →
+  </h3>
+
+  {% endif %}
+
+  <!--  If magazin-card -->
+
+  {% elsif page.magazin-cards %}
+  <figure class="aspect-ratio-1:1">
+    <img
+      loading="lazy"
+      src="https://media.tiierisch.de/img/placeholder-large.png"
+      data-src="https:///media.tiierisch.de/magazin/thumbnails/{{ item.img }}.jpg"
+      alt="{{ item.title }}"
+    />
+  </figure>
+
+  {% if item.subtitle %}
+
+  <h3 class="text-md padding-xs" style="color:#{{ item.text-color }};">
+    {{ item.title }}
+  </h3>
+  <p
+    class="text-right text-sm padding-xs padding-top-0 margin-top-auto"
+    style="color:#{{ item.text-color }};"
+  >
+    {{ item.subtitle }} →
+  </p>
+
+  {% else %}
+
+  <h3 class="text-md padding-xs" style="color:#{{ item.text-color }};">
+    {{ item.title }} →
+  </h3>
+
+  {% endif %}
+
+  <!--  If slider-card -->
+
+  {% elsif page.silder-cards %}
+  <figure class="aspect-ratio-1:1">
+    <img
+      loading="lazy"
+      src="https://media.tiierisch.de/img/placeholder-large.png"
+      data-src="https://media.tiierisch.de/teaser/{{ item.img }}.jpg"
+      alt="{{ item.title }}"
+    />
+  </figure>
+
+  {% if item.subtitle %}
+
+  <h3 class="text-sm padding-xs" style="color:#{{ item.text-color }};">
+    {{ item.title }}
+  </h3>
+  <p
+    class="text-right text-sm padding-xs padding-top-0 margin-top-auto"
+    style="color:#{{ item.text-color }};"
+  >
+    {{ item.subtitle }} →
+  </p>
+
+  {% else %}
+
+  <h3 class="text-sm padding-xs" style="color:#{{ item.text-color }};">
+    {{ item.title }} →
+  </h3>
+
+  {% endif %} {% endif %}
+
+  <!-- !Loading Lazy -->
+
+  {% else %}
+
+  <!--  If card -->
+
+  {% if page.cards %}
+  <figure class="aspect-ratio-1:1">
+    <img
+      src="https://media.tiierisch.de/teaser/{{ item.img }}.jpg"
+      alt="{{ item.title }}"
+    />
+  </figure>
+
+  {% if item.subtitle %}
+
+  <h3 class="text-md padding-xs" style="color:#{{ item.text-color }};">
+    {{ item.title }}
+  </h3>
+  <p
+    class="text-right text-sm padding-xs padding-top-0 margin-top-auto"
+    style="color:#{{ item.text-color }};"
+  >
+    {{ item.subtitle }} →
+  </p>
+
+  {% else %}
+
+  <h3 class="text-md padding-xs" style="color:#{{ item.text-color }};">
+    {{ item.title }} →
+  </h3>
+
+  {% endif %}
+
+  <!--  If magazin-card -->
+
+  {% elsif page.magazin-cards %}
+  <figure class="aspect-ratio-1:1">
+    <img
+      src="https:///media.tiierisch.de/magazin/thumbnails/{{ item.img }}.jpg"
+      alt="{{ item.title }}"
+    />
+  </figure>
+
+  {% if item.subtitle %}
+
+  <h3 class="text-md padding-xs" style="color:#{{ item.text-color }};">
+    {{ item.title }}
+  </h3>
+  <p
+    class="text-right text-sm padding-xs padding-top-0 margin-top-auto"
+    style="color:#{{ item.text-color }};"
+  >
+    {{ item.subtitle }} →
+  </p>
+
+  {% else %}
+
+  <h3 class="text-md padding-xs" style="color:#{{ item.text-color }};">
+    {{ item.title }} →
+  </h3>
+
+  {% endif %}
+
+  <!--  If slider-card -->
+
+  {% elsif page.slider-cards %}
+  <figure class="aspect-ratio-1:1">
+    <img
+      src="https://media.tiierisch.de/teaser/{{ item.img }}.jpg"
+      alt="{{ item.title }}"
+    />
+  </figure>
+
+  {% if item.subtitle %}
+
+  <h3 class="text-sm padding-xs" style="color:#{{ item.text-color }};">
+    {{ item.title }}
+  </h3>
+  <p
+    class="text-right text-sm padding-xs padding-top-0 margin-top-auto"
+    style="color:#{{ item.text-color }};"
+  >
+    {{ item.subtitle }} →
+  </p>
+
+  {% else %}
+
+  <h3 class="text-sm padding-xs" style="color:#{{ item.text-color }};">
+    {{ item.title }} →
+  </h3>
+
+  {% endif %} {% endif %} {% endif %}
+</a>

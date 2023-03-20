@@ -1,0 +1,61 @@
+<hr />
+
+<!-- Create arrays Start (https://shopify.github.io/liquid/filters/where/) -->
+
+<!--
+{% assign category_products = page.faq | where: "category", "Fragen zu Produkten" %}
+{% assign category_order = page.faq | where: "category", "Bestellvorgang" %}
+{% assign category_coupon = page.faq | where: "category", "Gutscheine" %}
+{% assign category_payment = page.faq | where: "category", "Bezahlung" %}
+{% assign category_shipping = page.faq | where: "category", "Versand und Lieferung" %}
+{% assign category_my_order = page.faq | where: "category", "Meine Bestellung" %}
+{% assign category_return = page.faq | where: "category", "Umtausch und Rücksendung" %}
+-->
+
+{% assign categories = ""  | split:',' %}
+{% for item in page.faq %}
+{% assign categories = categories  | push: item.category %}
+{% endfor %}
+{% assign categories = categories | uniq | join: "," %}
+{% assign categories = categories  | split:',' %}
+
+<!-- Create arrays End (https://shopify.github.io/liquid/filters/where/) -->
+
+<!-- Render category title Start -->
+
+{% for i in categories %}
+<h3 class="margin-top-md margin-bottom-sm">{{i}}</h3>
+
+<!-- Render category title End -->
+
+<!-- Render items Start -->
+
+<ul class="accordion  js-accordion" data-animation="on" data-multi-items="on">
+
+{% for item in page.faq %} 
+{% if item.render %}
+{% if item.category == i %} 
+
+<li class="accordion__item  js-accordion__item">
+    <button class="reset accordion__header padding-y-sm padding-x-md js-tab-focus" type="button">
+        <span class="text-md">{{item.question}}</span><svg class="icon accordion__icon-arrow no-js:is-hidden" viewBox="0 0 20 20" aria-hidden="true">
+            <g class="icon__group" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="10" y1="14" x2="3" y2="7" />
+                <line x1="17" y1="7" x2="10" y2="14" />
+            </g>
+        </svg>
+    </button>
+    <div class="accordion__panel padding-top-xxs padding-x-md padding-bottom-md js-accordion__panel">
+        <div class="text-component"><p>{{item.answer}}</p></div>
+    </div>
+</li>
+{% endif %}
+{% endif %}
+{% endfor %}
+
+</ul>
+
+{% endfor %}
+<!-- Render items End -->
+

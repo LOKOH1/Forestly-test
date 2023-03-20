@@ -1,0 +1,25 @@
+<li
+  class="slideshow-pm__item slideshow-pm__item--selected js-slideshow-pm__item"
+>
+  <figure class="aspect-ratio-16:9 width-100%">
+    <a href="{{ item.link }}">
+      {% if page.loading == "lazy" %}
+      <img
+        class="radius-md shadow-md"
+        loading="lazy"
+        src="https://media.tiierisch.de/img/placeholder-large.png"
+        data-src="https://media.tiierisch.de/teaser/slideshow-v2/{{ item.img }}.jpg"
+        loading="lazy"
+        alt="{{ item.alt }}"
+      />
+      {% else %}
+      <img
+        class="radius-md shadow-md"
+        src="https://media.tiierisch.de/teaser/slideshow-v2/{{ item.img }}.jpg"
+        alt="{{ item.alt }}
+              "
+      />
+      {% endif %}
+    </a>
+  </figure>
+</li>
