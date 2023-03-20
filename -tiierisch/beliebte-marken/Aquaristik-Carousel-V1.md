@@ -1,5 +1,5 @@
 ---
-title: Bquaristik - Carousel-V1
+title: Aquaristik - Carousel-V1
 layout: brand-overview-slider-v1
 resource: true
 categories:
