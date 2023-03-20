@@ -1,5 +1,5 @@
 ---
-title: Aquaristik - Carousel-V1
+title: Bquaristik - Carousel-V1
 layout: brand-overview-slider-v1
 resource: true
 categories:
@@ -41,6 +41,6 @@ brands:
   img: jbl
   link: https://www.tiierisch.de/produkte/fischfutter/artemio
   render: true
----
 
+---
 Beliebte Aquaristik Marken
