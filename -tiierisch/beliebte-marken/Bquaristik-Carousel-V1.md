@@ -41,6 +41,6 @@ brands:
   img: jbl
   link: https://www.tiierisch.de/produkte/fischfutter/artemio
   render: true
-
 ---
+
 Beliebte Aquaristik Marken
